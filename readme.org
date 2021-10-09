@@ -1,0 +1,7 @@
+* Rust Web Template (using actix)
+
+
+[[../../actions/workflows/build.yml/badge.svg]]
+
+
+A simple webapp using actix.
