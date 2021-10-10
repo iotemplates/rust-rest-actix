@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#
+# This is a simple wrapper around curl that is used to create a person.
+#
+
+FIRST_NAME=$1
+LAST_NAME=$2
+
+curl -i -X POST -H "Content-Type: application/json" -d "{ \"first_name\": \"$FIRST_NAME\", \"last_name\": \"$LAST_NAME\" }" http://localhost:8080/persons/ 2> /dev/null

@@ -51,7 +51,14 @@ jobs:
           command: test
       - name: Integration Testing
         run: |
-          ./target/release/rust-web-actix &
+          ./target/release/rust-rest-actix &
           sleep 1
-          if [[ "Hello world" != `curl http://localhost:8080` ]]; then exit 1; fi
-          pkill rust-web-actix
+          echo "Creating Person"
+          ./bin/create-person Jane Doe
+          echo "Aseert Person created"
+          if [[ -z `./bin/list-persons | grep Jane` ]]; then echo "Jane not found"!; exit 1; fi
+          if [[ -z `./bin/get-person 1 | grep Jane` ]]; then echo "Person with id: 1 not found!"; exit 1; fi
+          echo "Delete person"
+          ./bin/delete-person 1
+          echo "Done"
+          pkill rust-rest-actix

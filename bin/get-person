@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#
+# This is a simple wrapper around curl that is used to get a person.
+#
+
+ID=$1
+
+curl -i -X GET -H "Content-Type: application/json"  http://localhost:8080/persons/$ID 2> /dev/null

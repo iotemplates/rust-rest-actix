@@ -1,7 +1,42 @@
-* Rust Web Template (using actix)
+* Rust Rest Template (using actix)
 
 
 [[../../actions/workflows/build.yml/badge.svg]]
 
 
-A simple webapp using actix.
+A simple rest api using actix.
+
+** The application
+
+   The application is a very simple person `create, list, get, delete` app backed by a local file: [[./persons.json]] that lives in the project root.
+
+   Helper scripts are provided so that you can easily use the API.
+   
+*** Create
+
+    #+begin_src sh
+    ./bin/create-person Jane Doe
+    #+end_src
+    
+*** List
+
+    #+begin_src sh
+    ./bin/list-persons
+    #+end_src
+
+*** Get
+
+    #+begin_src sh
+    ./bin/get-person 1
+    #+end_src
+
+    #+RESULTS:
+
+*** Delete
+
+    #+begin_src sh
+    ./bin/delete-person 1
+    #+end_src
+
+    #+RESULTS:
+
